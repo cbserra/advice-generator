@@ -1,9 +1,9 @@
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
 
 .App {
   background-color: hsl(217, 19%, 24%);
   text-align: center;
-  min-height: 50vh;
+  min-height: 25vh;
   display: flex;
   align-self: center;
   align-items: center;
@@ -54,6 +54,7 @@ footer {
   width: 75%;
   /* padding-top: 25px; */
   margin: 0 auto;
+  min-height: 70px;
 }
 
 /* div.advice-divider {
@@ -66,11 +67,11 @@ footer {
 } */
 
 /* Media Query for Mobile Devices */
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 999px) {
 
-  div.App {
+  /* div.App {
     width: 80vw;
-  }
+  } */
 
   div.advice-divider {
     background-image: url('./images/pattern-divider-mobile.svg');
@@ -86,9 +87,9 @@ footer {
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1000px){
 
-  div.App {
+  /* div.App {
     width: 60vw;
-  }
+  } */
 
   div.advice-divider {
     background-image: url('./images/pattern-divider-desktop.svg');
@@ -128,7 +129,7 @@ div.next-quote:focus {
   cursor: pointer;
 }
 
-div.error-message, div.info-message {
+div.error-message, div.loading-message {
   margin: 10px 0px;
   padding: 12px;
   border-radius: 10px;
@@ -140,12 +141,12 @@ div.error-message {
   border: 1px dotted #D8000C;
 }
 
-div.info-message {
+div.loading-message {
   color: #00529B;
   background-color: #BDE5F8;
   border: 1px dotted #00529B;
 }
 
-div.error-message i, div.info-message i {
+div.error-message i, div.loading-message i {
   margin-right: 10px;
 }

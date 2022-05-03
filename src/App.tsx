@@ -3,31 +3,38 @@ import './App.css';
 import diceIcon from './images/icon-dice.svg'
 import useAxios from 'axios-hooks';
 
+export interface Slip {
+  id: number,
+  advice: string
+}
+
  const App = () => {
   
   const [{ response, loading, error }, refetch] = useAxios({
     method: 'get',
     url: 'https://api.adviceslip.com/advice',
   })
-  const [advice, setAdvice] = useState<string>("")
+  const [slip, setSlip] = useState<Slip>()
 
   useEffect(() => { 
     if (response != null) {
-      setAdvice(response.data.slip.advice)
+      setSlip(response.data.slip)
     }
   },
   [response])
 
   return (
     <div className="App">
+      { slip && (
       <header className="advice-header">
-        Advice #1111
+        Advice #{slip.id}
       </header>
+      )}
       <main className="advice-container">
         {loading 
-          ? (<div className="info-message">
-                <i className="fa fa-info-circle"></i>
-                Loading...
+          ? (<div className="loading-message">
+              <i className="fa-solid fa-spinner fa-spin-pulse"></i>
+              Loading...
             </div>)
           :  error && (
                   <div className="error-message">
@@ -36,9 +43,9 @@ import useAxios from 'axios-hooks';
                   </div>
                 )
           }
-          {   advice && (
+          {   slip && (
                 <div className="advice-quote">
-                  {advice}
+                  {slip.advice}
                 </div>
               )
             }
