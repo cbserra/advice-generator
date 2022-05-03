@@ -1,38 +1,155 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
 .App {
+  background-color: hsl(217, 19%, 24%);
   text-align: center;
+  min-height: 50vh;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 45vw;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 15px;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header.advice-header {
+  /* background-color: #282c34; */
+  color: hsl(150, 100%, 66%);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  margin: 25px;
+  /* flex-shrink: 0; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+main.advice-container {
+  flex-grow: 1;
+  margin: 25px;
+}
+
+div.advice-quote {
+  font-size: 28px;
+  color: hsl(193, 38%, 86%);
+}
+
+div.advice-quote::before {
+  content: '"';
+}
+
+div.advice-container::after {
+  content: '"';
+}
+
+footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 75%;
+  /* padding-top: 25px; */
+  margin: 0 auto;
+}
+
+/* div.advice-divider {
+  background-image: url('./images/pattern-divider-desktop.svg');
+  background-repeat: no-repeat;
+  align-self: center;
+  height: 16px;
+  content: "";
+  width: 444px;
+} */
+
+/* Media Query for Mobile Devices */
+@media (min-width: 375px) {
+
+  div.App {
+    width: 80vw;
+  }
+
+  div.advice-divider {
+    background-image: url('./images/pattern-divider-mobile.svg');
+    background-repeat: no-repeat;
+    align-self: center;
+    height: 16px;
+    content: " ";
+    width: 295px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* Media Query for Laptops and Desktops */
+
+@media (min-width: 1000px){
+
+  div.App {
+    width: 60vw;
+  }
+
+  div.advice-divider {
+    background-image: url('./images/pattern-divider-desktop.svg');
+    background-repeat: no-repeat;
+    align-self: center;
+    height: 16px;
+    content: " ";
+    width: 444px;
+  }
+}
+
+div.next-quote {
+  background-color:  hsl(150, 100%, 66%);
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  border-radius: 50%;
+  padding: 15px;
+  line-height: 0;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin-top: auto;
+}
+
+div.next-quote img {
+  margin: 0;
+  padding: 0;
+}
+
+div.next-quote:hover {
+  box-shadow: 0 0 25px  hsl(150, 100%, 66%);
+  cursor: pointer;
+}
+
+div.next-quote:focus {
+  box-shadow: 0 0 50  hsl(150, 100%, 66%);
+  cursor: pointer;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.error-message, div.info-message {
+  margin: 10px 0px;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+div.error-message {
+  color: #D8000C;
+  background-color: #FFD2D2;
+  border: 1px dotted #D8000C;
+}
+
+div.info-message {
+  color: #00529B;
+  background-color: #BDE5F8;
+  border: 1px dotted #00529B;
+}
+
+div.error-message i, div.info-message i {
+  margin-right: 10px;
 }
