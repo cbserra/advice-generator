@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import diceIcon from './images/icon-dice.svg'
 import useAxios from 'axios-hooks';
 
-function App() {
+ const App = () => {
   
   const [{ response, loading, error }, refetch] = useAxios({
     method: 'get',
     url: 'https://api.adviceslip.com/advice',
-  });
-
+  })
   const [advice, setAdvice] = useState<string>("")
 
-  React.useEffect(() => { 
+  useEffect(() => { 
     if (response != null) {
       setAdvice(response.data.slip.advice)
     }
@@ -51,7 +50,7 @@ function App() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
 
 export default App;
