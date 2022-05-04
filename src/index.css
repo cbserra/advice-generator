@@ -1,16 +1,21 @@
+  
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
-  max-height: 100%;
+  /* max-height: 100%; */
+  width: 100%;
 }
 
 body {
-  background: hsl(218, 23%, 16%);
+  background: var(--dark-blue);
   font-family: 'Manrope', -apple-system, sans-serif;
   font-weight: 800;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsl(193, 38%, 86%);
-  margin: 0;
+  color: var(--light-cyan)
 }
 
 div#root {
@@ -19,7 +24,6 @@ div#root {
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  height: 100%;
 }
 
 code {
@@ -27,15 +31,10 @@ code {
     monospace;
 }
 
-.attribution { 
-  font-size: 11px; 
-  text-align: center; 
-  margin: 100px;
-
+:root {
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
 }
-
-.attribution a { 
-  color: hsl(194, 50%, 77%);
-}
-
-

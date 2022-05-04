@@ -1,138 +1,92 @@
-/* @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
-
 .App {
-  background-color: hsl(217, 19%, 24%);
   text-align: center;
-  min-height: 25vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  align-self: center;
-  align-items: center;
   justify-content: center;
-  width: 45vw;
-  flex-direction: column;
-  padding: 25px;
-  border-radius: 15px;
-  margin: auto;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.App a {
-  color: #61dafb;
-}
-
-header.advice-header {
-  color: hsl(150, 100%, 66%);
+h1 {
+  color: var(--neon-green);
   text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  margin: 25px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 4.08571px;
+  color: var(--neon-green)
 }
 
-main.advice-container {
-  flex-grow: 1;
-  margin: 25px;
-}
-
-div.advice-quote {
-  font-size: 28px;
-  color: hsl(193, 38%, 86%);
-}
-
-div.advice-quote::before {
-  content: '"';
-}
-
-div.advice-quote::after {
-  content: '"';
-}
-
-footer {
-  flex-shrink: 0;
+main {
+  background-color: var(--dark-grayish-blue);
+  border-radius: 15px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  width: 75%;
-  /* padding-top: 25px; */
-  margin: 0 auto;
-  min-height: 70px;
+  align-items: center;
+  position: relative;
+  padding: 25px 15px 75px 15px;
+  width: 540px;
+  box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
 }
 
-/* div.advice-divider {
-  background-image: url('./images/pattern-divider-desktop.svg');
-  background-repeat: no-repeat;
-  align-self: center;
-  height: 16px;
-  content: "";
-  width: 444px;
-} */
+q.advice-quote {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: -0.3px;
+  color: var(--light-cyan);
+  padding: 25px;
+  display: block;
+}
 
 /* Media Query for Mobile Devices */
 @media (min-width: 375px) and (max-width: 999px) {
 
-  /* div.App {
-    width: 80vw;
-  } */
-
-  div.advice-divider {
-    background-image: url('./images/pattern-divider-mobile.svg');
-    background-repeat: no-repeat;
-    align-self: center;
-    height: 16px;
-    content: " ";
-    width: 295px;
+  main {
+    width: 343px;
   }
 }
-
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1000px){
 
-  /* div.App {
-    width: 60vw;
-  } */
-
-  div.advice-divider {
-    background-image: url('./images/pattern-divider-desktop.svg');
-    background-repeat: no-repeat;
-    align-self: center;
-    height: 16px;
-    content: " ";
-    width: 444px;
+  main {
+    width: 540px;
   }
 }
 
 div.next-quote {
+  background: no-repeat url('./images/icon-dice.svg');
+  background-position: center;
   background-color:  hsl(150, 100%, 66%);
-  display: inline-block;
-  position: relative;
-  top: 50px;
+  background-size: 50%;
   border-radius: 50%;
-  padding: 15px;
-  line-height: 0;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  margin-top: auto;
-}
-
-div.next-quote img {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
 }
 
 div.next-quote:hover {
-  box-shadow: 0 0 25px  hsl(150, 100%, 66%);
-  cursor: pointer;
-}
-
-div.next-quote:focus {
-  box-shadow: 0 0 50  hsl(150, 100%, 66%);
+  box-shadow: 0 0 25px  var(--neon-green);
   cursor: pointer;
 }
 
 div.error-message, div.loading-message {
-  margin: 10px 0px;
+  margin: 10px;  
   padding: 12px;
   border-radius: 10px;
+  width: 100%;
 }
 
 div.error-message {
